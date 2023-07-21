@@ -1,0 +1,22 @@
+{
+  "name": "expo-router-modal-stack-working",
+  "version": "0.0.1",
+  "private": true,
+  "main": "expo-router/entry",
+  "dependencies": {
+    "@testing-library/jest-native": "*",
+    "@testing-library/react-native": "*",
+    "react-native": "*",
+    "expo": "*",
+    "react-native-svg": "*",
+    "react-native-web": "*",
+    "@nx/expo": "*",
+    "@expo/metro-config": "*",
+    "react": "*",
+    "expo-router": "*"
+  },
+  "scripts": {
+    "eas-build-pre-install": "cd ../../../ && node tools/scripts/eas-build-pre-install.mjs . apps/expo-router/modal-stack-working && cp yarn.lock apps/expo-router/modal-stack-working",
+    "eas-build-post-install": "cd ../../../ && node tools/scripts/eas-build-post-install.mjs . apps/expo-router/modal-stack-working"
+  }
+}

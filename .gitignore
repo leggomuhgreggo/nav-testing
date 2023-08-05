@@ -5,6 +5,7 @@ dist
 tmp
 /out-tsc
 
+
 # dependencies
 node_modules
 
@@ -56,3 +57,8 @@ cache/
 
 apps/undefined-e2e/artifacts
 apps/react-navigation/example-app-e2e/artifacts
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/

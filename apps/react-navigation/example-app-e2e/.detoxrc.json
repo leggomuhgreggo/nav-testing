@@ -9,6 +9,10 @@
     }
   },
   "apps": {
+    "ios.eas": {
+      "type": "ios.app",
+      "binaryPath": "../example-app/dist/ExampleApp.app"
+    },
     "ios.debug": {
       "type": "ios.app",
       "build": "cd ../../../apps/react-navigation/example-app/ios && xcodebuild -workspace ExampleApp.xcworkspace -scheme ExampleApp -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -derivedDataPath ./build -quiet",
@@ -19,16 +23,17 @@
       "build": "cd ../../../apps/react-navigation/example-app/ios && xcodebuild -workspace ExampleApp.xcworkspace -scheme ExampleApp -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -derivedDataPath ./build -quiet",
       "binaryPath": "../../../apps/react-navigation/example-app/ios/build/Build/Products/Release-iphonesimulator/ExampleApp.app"
     },
-    "ios.eas": {
-      "type": "ios.app",
-      "binaryPath": "../example-app/dist/ReactNavigationExampleApp.app"
-    },
     "ios.local": {
       "type": "ios.app",
       "build": "yarn nx run example-app:build --platform ios --profile preview --wait --local --no-interactive --output=../../../apps/react-navigation/example-app/dist/ExampleApp.tar.gz",
       "binaryPath": "../../../apps/react-navigation/example-app/dist/ExampleApp.app"
     },
 
+    "android.eas": {
+      "type": "android.apk",
+      "build": "yarn nx run example-app:download --platform android --distribution simulator --output=../../../apps/react-navigation/example-app/dist/",
+      "binaryPath": "../../../apps/react-navigation/example-app/dist/ExampleApp.apk"
+    },
     "android.debug": {
       "type": "android.apk",
       "build": "cd ../../../apps/react-navigation/example-app/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
@@ -38,12 +43,6 @@
       "type": "android.apk",
       "build": "cd ../../../apps/react-navigation/example-app/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release",
       "binaryPath": "../../../apps/react-navigation/example-app/android/app/build/outputs/apk/release/app-release.apk"
-    },
-
-    "android.eas": {
-      "type": "android.apk",
-      "build": "yarn nx run example-app:download --platform android --distribution simulator --output=../../../apps/react-navigation/example-app/dist/",
-      "binaryPath": "../../../apps/react-navigation/example-app/dist/ExampleApp.apk"
     },
     "android.local": {
       "type": "android.apk",
@@ -66,6 +65,10 @@
     }
   },
   "configurations": {
+    "ios.sim.eas": {
+      "device": "simulator",
+      "app": "ios.eas"
+    },
     "ios.sim.release": {
       "device": "simulator",
       "app": "ios.release"
@@ -74,16 +77,15 @@
       "device": "simulator",
       "app": "ios.debug"
     },
-
-    "ios.sim.eas": {
-      "device": "simulator",
-      "app": "ios.eas"
-    },
     "ios.sim.local": {
       "device": "simulator",
       "app": "ios.local"
     },
 
+    "android.emu.eas": {
+      "device": "emulator",
+      "app": "android.eas"
+    },
     "android.emu.release": {
       "device": "emulator",
       "app": "android.release"
@@ -91,11 +93,6 @@
     "android.emu.debug": {
       "device": "emulator",
       "app": "android.debug"
-    },
-
-    "android.emu.eas": {
-      "device": "emulator",
-      "app": "android.eas"
     },
     "android.emu.local": {
       "device": "emulator",

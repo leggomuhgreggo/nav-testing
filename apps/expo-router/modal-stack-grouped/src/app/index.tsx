@@ -5,8 +5,9 @@ export default function Page() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home</Text>
+      <Text style={styles.subtitle}>Modal Stack w/ Group</Text>
 
-      <Link style={styles.link} href="/(group)/">(group)</Link>
+      <Link style={styles.link} href="/(group)/">(modal stack group)</Link>
 
       <Link style={styles.link} href="/(group)/modal-screen-1">modal-screen-1</Link>
 
@@ -25,6 +26,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     color: "#023047",
+  },
+  subtitle: {
+    fontSize: 20,
+    color: "#555",
     marginBottom: 30
   },
   link: {

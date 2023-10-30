@@ -14,7 +14,8 @@
     "@expo/metro-config": "*",
     "react": "*",
     "expo-router": "*",
-    "metro-config": "*"
+    "metro-config": "*",
+    "react-native-svg-transformer": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../../ && node tools/scripts/eas-build-pre-install.mjs . apps/expo-router/modal-stack-grouped && cp yarn.lock apps/expo-router/modal-stack-grouped",
